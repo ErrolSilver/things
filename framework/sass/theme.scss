@@ -1,0 +1,63 @@
+$number-of-columns: 12;
+$break-small: 768px;
+$break-medium: 992px;
+$break-large: 1200px;
+
+%gutter {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+%constant-styles {
+  @extend %gutter;
+  display: inline-block;
+  width: 100%;
+}
+
+@for $i from 1 through $number-of-columns {
+  .col {
+    &-xs {
+      &-#{$i} {
+        @extend %constant-styles;
+        @media (min-width: 0px) {
+          display: block;
+          width: 100% / $i;
+        }
+      }
+    }
+
+    &-sm {
+      &-#{$i} {
+        @extend %constant-styles;
+        @media (min-width: $break-small) {
+          display: block;
+          width: 100% / $i;
+        }
+      }
+    }
+
+    &-md {
+      &-#{$i} {
+        @extend %constant-styles;
+        @media (min-width: $break-medium) {
+          display: block;
+          width: 100% / $i;
+        }
+      }
+    }
+
+    &-lg {
+      &-#{$i} {
+        @extend %constant-styles;
+        @media (min-width: $break-large) {
+          display: block;
+          width: 100% / $i;
+        }
+      }
+    }
+  }
+}
+
+.test {
+  //@extend %col-md-4;
+}
