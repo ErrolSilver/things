@@ -3,6 +3,10 @@ $break-small: 768px;
 $break-medium: 992px;
 $break-large: 1200px;
 
+* {
+  box-sizing: border-box;
+}
+
 %gutter {
   padding-left: 15px;
   padding-right: 15px;
@@ -10,17 +14,16 @@ $break-large: 1200px;
 
 %constant-styles {
   @extend %gutter;
-  display: inline-block;
   width: 100%;
 }
 
 @for $i from 1 through $number-of-columns {
-  .col {
+  %col {
     &-xs {
       &-#{$i} {
         @extend %constant-styles;
         @media (min-width: 0px) {
-          display: block;
+          float: left;
           width: 100% / $i;
         }
       }
@@ -30,7 +33,7 @@ $break-large: 1200px;
       &-#{$i} {
         @extend %constant-styles;
         @media (min-width: $break-small) {
-          display: block;
+          float: left;
           width: 100% / $i;
         }
       }
@@ -40,7 +43,7 @@ $break-large: 1200px;
       &-#{$i} {
         @extend %constant-styles;
         @media (min-width: $break-medium) {
-          display: block;
+          float: left;
           width: 100% / $i;
         }
       }
@@ -50,7 +53,50 @@ $break-large: 1200px;
       &-#{$i} {
         @extend %constant-styles;
         @media (min-width: $break-large) {
-          display: block;
+          float: left;
+          width: 100% / $i;
+        }
+      }
+    }
+  }
+
+  %offset {
+    position: relative;
+    &-xs {
+      &-#{$i} {
+        @extend %constant-styles;
+        @media (min-width: 0px) {
+          float: left;
+          width: 100% / $i;
+        }
+      }
+    }
+
+    &-sm {
+      &-#{$i} {
+        @extend %constant-styles;
+        @media (min-width: $break-small) {
+          float: left;
+          width: 100% / $i;
+        }
+      }
+    }
+
+    &-md {
+      &-#{$i} {
+        @extend %constant-styles;
+        @media (min-width: $break-medium) {
+          float: left;
+          width: 100% / $i;
+        }
+      }
+    }
+
+    &-lg {
+      &-#{$i} {
+        @extend %constant-styles;
+        @media (min-width: $break-large) {
+          float: left;
           width: 100% / $i;
         }
       }
@@ -59,5 +105,7 @@ $break-large: 1200px;
 }
 
 .test {
-  //@extend %col-md-4;
+  @extend %col-md-4;
+  height: 50px;
+  background: red;
 }
