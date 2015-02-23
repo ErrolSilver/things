@@ -1,0 +1,41 @@
+html,
+body {
+  height: 100%;
+  margin: 0; }
+
+.wrapper {
+  display: flex;
+  height: 100%;
+  flex-flow: row wrap; }
+
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%; }
+
+.header {
+  background: navy;
+  min-height: 75px; }
+
+.footer {
+  background: blue; }
+
+.main {
+  background: beige; }
+
+@media all and (min-width: 600px) {
+  .aside {
+    flex: 1 auto; } }
+@media all and (min-width: 800px) {
+  .main {
+    flex: 3 0px; }
+
+  .aside {
+    order: 2; }
+
+  .main {
+    order: 1; }
+
+  .footer {
+    order: 3; } }
+
+/*# sourceMappingURL=theme.css.map */
