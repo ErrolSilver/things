@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="css/theme.css">
+</head>
+<body>
+  <div class="container">
+    <div class="diagonal-cover"></div>
+  </div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+<script type="text/javascript">
+  $(window).scroll(function() {
+      var scrolled = $(window).scrollTop();
+      moveElement($('.diagonal-cover'), .2);
+   });
+
+  function moveElement(element, speed) {
+     var scrolled = $(window).scrollTop() / speed;
+
+      element.css({
+        transform: 'translateY(' + -scrolled + 'px) translateX(' + scrolled + 'px) rotate(36deg)',
+      });
+    }
+</script>
+</body>
+</html>

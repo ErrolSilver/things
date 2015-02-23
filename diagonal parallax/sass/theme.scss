@@ -1,0 +1,26 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  height: 300%;
+}
+.container {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.diagonal-cover {
+  background: rgba(0, 0, 0, 0.6);
+  height: 200%;
+  width: 200%;
+  display: inline-block;
+  position: absolute;
+  right: -50%;
+  top: -50%;
+  transform: rotate(36deg);
+}
