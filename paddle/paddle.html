@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style type="text/css">
+    .paddle {
+      position: relative;
+    }
+    .surface {
+      background: #ea2828;
+      box-shadow: 0 0 4px 1px;
+      border-radius: 50%;
+      height: 300px;
+      position: relative;
+      width: 250px;
+      z-index: 1;
+    }
+    .surface-hidden {
+      box-shadow: inset 0 0 3px 2px;  
+      content: '';
+      display: block;
+      height: 5px;
+      position: absolute;
+      width: 158px;
+      z-index: 7;
+      top: 263px;
+      left: 46px;
+      border-radius: 50%;
+    }
+    .handle-surface-bridge {
+      background: url(http://subtlepatterns.com/patterns/retina_wood.png);
+      display: none;
+      border-radius: 50%;
+      height: 300px;
+      position: absolute;
+      top: 0;
+      width: 250px;
+    }
+    
+    .handle {
+      background: url(http://subtlepatterns.com/patterns/retina_wood.png);
+      border-radius: 5px;
+      box-shadow: 0 0 4px 1px;
+      height: 180px;
+      left: 99px;
+      position: absolute;
+      top: 265px;
+      width: 50px;
+      z-index: 3;
+    }
+    .handle-details {
+      background: -moz-linear-gradient(top,  rgba(127,120,79,0.6) 0%, rgba(201,193,144,0.52) 35%, rgba(213,206,166,0.38) 100%); /* FF3.6+ */
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(127,120,79,0.6)), color-stop(35%,rgba(201,193,144,0.52)), color-stop(100%,rgba(213,206,166,0.38))); /* Chrome,Safari4+ */
+      background: -webkit-linear-gradient(top,  rgba(127,120,79,0.6) 0%,rgba(201,193,144,0.52) 35%,rgba(213,206,166,0.38) 100%); /* Chrome10+,Safari5.1+ */
+      background: -o-linear-gradient(top,  rgba(127,120,79,0.6) 0%,rgba(201,193,144,0.52) 35%,rgba(213,206,166,0.38) 100%); /* Opera 11.10+ */
+      background: -ms-linear-gradient(top,  rgba(127,120,79,0.6) 0%,rgba(201,193,144,0.52) 35%,rgba(213,206,166,0.38) 100%); /* IE10+ */
+      background: linear-gradient(to bottom,  rgba(127,120,79,0.6) 0%,rgba(201,193,144,0.52) 35%,rgba(213,206,166,0.38) 100%); /* W3C */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#997f784f', endColorstr='#61d5cea6',GradientType=0 ); /* IE6-9 */
+
+      height: 178px;
+      left: 102px;
+      opacity: .7;
+      position: absolute;
+      top: 268px;
+      z-index: 11;
+      width: 42px;
+    }
+    .handle-details_stripe {
+      border-left: 5px solid #b12644;
+      border-right: 5px solid #252e76;
+      height: 178px;
+      left: 119px;
+      position: absolute;
+      top: 268px;
+      z-index: 10;
+    }
+    .handle-surface-bridge_left {
+      background: url(http://subtlepatterns.com/patterns/retina_wood.png);
+      height: 40px;
+      width: 56px;
+      z-index: 3;
+      position: absolute;
+      top: 265px;
+      left: 45px;
+    }
+    .handle-surface-bridge_left:after {
+      box-shadow: inset 0 0 3px 1px;
+      background: #fff;
+      border-top-right-radius: 50%;
+      content: '';
+      display: block;
+      height: 50px;
+      width: 62px;
+      transform: rotate(16deg);
+      position: relative;
+      top: 10px;
+      left: -8px;
+    }
+    .handle-surface-bridge_right {
+      background: url(http://subtlepatterns.com/patterns/retina_wood.png);
+      height: 40px;
+      width: 56px;
+      z-index: 3;
+      position: absolute;
+      top: 265px;
+      left: 148px;
+    }
+    .handle-surface-bridge_right:after {
+      box-shadow: inset 0 0 3px 1px;
+      background: #fff;
+      border-top-left-radius: 50%;
+      content: '';
+      display: block;
+      height: 50px;
+      left: 1px;
+      position: relative;
+      top: 10px;
+      transform: rotate(-16deg);
+      width: 63px;
+    }
+    
+    .handle-surface-bridge_left-hide-overflow {
+      border-top-right-radius: 61%;
+      height: 53px;
+      background: white;
+      width: 69px;
+      position: absolute;
+      left: 30px;
+      top: 276px;
+      z-index: 10;
+      transform: rotate(17deg)
+    }
+    .handle-surface-bridge_right-hide-overflow {
+      border-top-left-radius: 61%;
+      height: 53px;
+      background: white;
+      width: 69px;
+      position: absolute;
+      left: 149px;
+      top: 276px;
+      z-index: 10;
+      transform: rotate(-17deg)
+    }
+  </style>
+</head>
+<body>
+  <div class="paddle">
+    <div class="surface"></div>
+    <div class="surface-hidden"></div>
+    <div class="handle"></div>
+    <div class="handle-details"></div>
+    <div class="handle-details_stripe"></div>
+    <div class="handle-surface-bridge_left"></div>
+    <div class="handle-surface-bridge_right"></div>
+    <div class="handle-surface-bridge_left-hide-overflow"></div>
+    <div class="handle-surface-bridge_right-hide-overflow"></div>
+  </div>
+</body>
+</html>
